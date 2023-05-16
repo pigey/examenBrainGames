@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/static/css/main.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/static/css/nummerMemory.css}">
+    <title>nummerMemory</title>
+</head>
+<body>
+<div class="navbar">
+    <a href="/">
+        <div class="logoBox">
+            <p class="logoText">P.B.G</p>
+            <img th:src="@{/static/images/brain.png}" alt="brainLogo" class="logoSmall">
+        </div>
+    </a>
+    <div class="logout">
+        logout
+    </div>
+</div>
+
+<div class="mainContent">
+
+    <div class="gameTitle">
+        <h1>Nummer Memory</h1>
+    </div>
+
+    <div class="gameContainer">
+        <div class="gameStart" id="gameStartScreen">
+            <div class="round" id="round">Round 0</div>
+            <div class="computerContainer">
+                <div class="numbers" id="numbers">xxxxxxxxxxx</div>
+                <div class="timer" id="timer">20s</div>
+            </div>
+
+            <div class="userInputContainer">
+                <div>
+                    <input class="userInput" type="text" id="guessNumber" placeholder="Do you remember?..." onfocus="typing()" onblur="notTyping()">
+                </div>
+                <div class="logout" onclick="submit()">
+                    Submit
+                </div>
+            </div>
+
+            <div class="play" id="playBtn" onclick="gameStart()">
+                <p class="playText">Play</p>
+            </div>
+        </div>
+
+        <div class="gameOver" id="gameOverScreen">
+            <form th:action="@{/nummerMemory}" th:object="${nrMemModel}" method="post">
+                <h2>Too bad!</h2>
+                <h2>You made it to round:</h2>
+                <input type="text" id="endRound" class="endRound" readonly th:field="*{score}">
+                <div class="startOverContainer">
+                    <div class="logout"><input type="submit" value="Submit Score" class="submitBtn"></div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<script th:src="@{/static/js/nummerMemory.js}"></script>
+</body>
+</html>

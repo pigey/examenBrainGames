@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/static/css/main.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>register</title>
+</head>
+<body>
+<div class="navbar">
+    <a th:href="@{/}">
+        <div class="logoBox">
+            <p class="logoText">P.B.G</p>
+            <img th:src="@{/static/images/brain.png}" alt="brainLogo" class="logoSmall">
+        </div>
+    </a>
+    <form th:action="@{logout}" method="post">
+        <input type="submit" value="Logout" class="logout">
+
+    </form>
+</div>
+<div class="container">
+    <div class="containerItems">
+        <div class="loginTitle">
+            <h1>Login</h1>
+        </div>
+        <form th:action="@{/login}" method="post">
+            <div th:if="${param.error}" >
+                <p class="text-danger" >[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]] </p>
+            </div>
+            <div class="usernameBox">
+                <p class="usernametext">Username:</p>
+                <input name="username" type="text" class="usernameInput" placeholder="your username">
+
+            </div>
+            <div class="passwordBox">
+                <p class="passwordtext">Password:</p>
+                <input name="password" type="password" class="usernameInput" placeholder="your password">
+            </div>
+
+            <button class="loginBtnSite" value="Login">
+                <p class="loginBtnText">Login</p>
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+
+html{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    margin: 0px;
+}
+p{
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ffe3fd;
+    font-family: 'Ubuntu', serif;
+}
+
+/* NavBar */
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d2bcd1;
+    width: 100%;
+
+}
+.logout{
+    background-color: #3566f3;
+    padding: 5px;
+    border: 3px black solid;
+    box-shadow: 2px 2px #162a62;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.logoBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 3px black solid;
+    width: auto;
+    max-width: fit-content;
+    padding: 2px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 1px 1px black;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.logoSmall{
+    height: 25px;
+    width: 35px;
+}
+.logoText{
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+
+
+
+/* HERO */
+.container{
+    text-align: center;
+}
+.firstContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+.containerItems{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    height: 45px;
+    width: 60px;
+}
+
+.title{
+    margin-right: 20px;
+}
+
+/* CONTENT */
+.secondContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-top: 20px;
+}
+.games{
+    background-color: #72cbff;
+    border: 2px black solid;
+    height: auto;
+    width: 10%;
+    font-weight: bold;
+    color: black;
+    font-size: larger;
+    box-shadow: 2px 2px #1a2f3b;
+    border-radius: 10px;
+}
+.leaderboards{
+    margin-left: 20px;
+    background-color: #7b7bf3;
+    border: 2px black solid;
+    height: auto;
+    width: 10%;
+    font-weight: bold;
+    color: black;
+    font-size: larger;
+    box-shadow: 2px 2px #292951;
+    border-radius: 10px;
+}
+
+.btnContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.loginBtn{
+    background-color: #3566f3;
+    width: 15%;
+    height: 50px;
+    border: 3px black solid;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px #162a62;
+    border-radius: 10px;
+}
+.loginBtnSite{
+    background-color: #3566f3;
+    min-width: 150px;
+    max-width: max-content;
+    height: 50px;
+    border: 3px black solid;
+    margin-top: 10px;
+    box-shadow: 2px 2px #162a62;
+    border-radius: 10px;
+}
+.loginBtnText{
+    font-size: larger;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 4.5%;
+}
+
+.loginTitle{
+    margin-top: 8%;
+
+}
+
+.text-danger{
+    color: red;
+    font-weight: bold;
+}
+
+.usernametext{
+    margin-top: 20%;
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+}
+
+.passwordtext{
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.usernameInput{
+    font-size: larger;
+    border: gray 3px solid;
+    border-radius: 6px;
+    height: 30px;
+}
+.usernameInput:focus{
+    font-size: larger;
+    border: black 3px solid;
+    border-radius: 6px;
+}

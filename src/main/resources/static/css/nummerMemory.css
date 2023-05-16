@@ -1,0 +1,121 @@
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.gameTitle{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.gameContainer{
+    display: flex;
+    background-color: #72cbff;
+    box-shadow: 2px 2px #1a2f3b;
+    border: 2px black solid;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+    justify-content: center;
+}
+
+.computerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    margin-bottom: 20px;
+    font-size:xx-large;
+    font-weight: bold;
+    margin-top: 3%;
+    width: 100%;
+}
+.round{
+    font-size: x-large;
+    font-weight: 800;
+}
+.numbers{
+    border-bottom: 3px solid black;
+}
+.timer{
+    border-bottom: 3px solid black;
+    margin-left: 40px;
+}
+
+.userInputContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.userInput{
+    font-size: larger;
+    border: gray 3px solid;
+    border-radius: 6px;
+    height: 30px;
+    margin-right: 30px;
+}
+.usernameInput:focus{
+    font-size: larger;
+    border: black 3px solid;
+    border-radius: 6px;
+}
+
+.play{
+    display: flex;
+    align-items: center;
+    background-color: #3566f3;
+    width: 15%;
+    height: 50px;
+    border: 3px black solid;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px #162a62;
+    border-radius: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+.playText{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.gameStart{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.gameOver{
+    display: none;
+    flex-direction: column;
+    height: fit-content;
+}
+.startOverContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.endRound{
+    border: none;
+    background-color: #72cbff;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submitBtn{
+    background-color: #3566f3;
+    border: none;
+    font-size: larger;
+}

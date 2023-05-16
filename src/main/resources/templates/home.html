@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/static/css/main.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Pigeys Brain Games</title>
+
+</head>
+<body>
+
+<div class="navbar">
+    <a th:href="@{/}">
+        <div class="logoBox">
+            <p class="logoText">P.B.G</p>
+            <img th:src="@{/static/images/brain.png}" alt="brainLogo" class="logoSmall">
+        </div>
+    </a>
+    <form th:action="@{logout}" method="post">
+        <input type="submit" value="Logout" class="logout">
+
+
+    </form>
+</div>
+<div class="container">
+    <div class="firstContainer">
+
+        <div class="title">
+            <h1>Pigeys BrainGames</h1>
+
+        </div>
+        <div>
+            <img th:src="@{/static/images/brain.png}" alt="brainLogo" class="logo">
+        </div>
+    </div>
+    <div class="secondContainer">
+
+
+        <div class="games">
+            <a th:href="@{/games}">
+            <p>Games <br> For <br>The <br>Mind</p>
+            </a>
+        </div>
+
+
+        <div class="leaderboards">
+            <p>Leaderboard<br> For<br> All<br> Games</p>
+
+        </div>
+    </div>
+    <div class="loginText">
+        <h2 class="">Login To play!</h2>
+
+    </div>
+    <div class="btnContainer">
+    <div class="loginBtn">
+        <a th:href="@{/register}">
+        <p class="loginBtnText">Register</p>
+        </a>
+
+    </div>
+
+    <div class="loginBtn">
+        <a th:href="@{/login}">
+        <p class="loginBtnText">Login</p>
+        </a>
+    </div>
+    </div>
+</div>
+
+
+</body>
+</html>

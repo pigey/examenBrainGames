@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/static/css/main.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>register</title>
+</head>
+<body>
+<div class="navbar">
+    <a th:href="@{/}">
+        <div class="logoBox">
+            <p class="logoText">P.B.G</p>
+            <img th:src="@{/static/images/brain.png}" alt="brainLogo" class="logoSmall">
+        </div>
+    </a>
+    <form th:action="@{logout}" method="post">
+    <input type="submit" value="Logout" class="logout">
+
+    </form>
+</div>
+<div class="container">
+    <div class="containerItems">
+        <div class="loginTitle">
+            <h1>Register</h1>
+        </div>
+        <form th:action="@{/register}" th:object="${userModel}" method="post">
+            <div class="usernameBox">
+                <p class="usernametext" style="font-family:Ubuntu;">Username:</p>
+                <input th:field="*{username}" type="text" class="usernameInput" placeholder="your username">
+                <p th:if="${ #fields.hasErrors('username')}"
+                   th:errors="*{username}"
+                   th:errorclass="error"
+                ></p>
+            </div>
+            <div class="passwordBox">
+                <p class="passwordtext">Password:</p>
+                <input th:field="*{password}" type="password" class="usernameInput" placeholder="your password">
+                <p th:each="error : ${#fields.errors('password')}"
+                   th:text="${error}"
+                   class="error">
+                </p>
+            </div>
+
+            <button class="loginBtnSite" value="Register">
+                <p class="loginBtnText">Register</p>
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

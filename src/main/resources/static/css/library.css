@@ -1,0 +1,45 @@
+.libraryText{
+    text-align: center;
+    margin-top: 5%;
+}
+.libraryItemContainer{
+    display: flex;
+    background-color: #72cbff;
+    box-shadow: 2px 2px #1a2f3b;
+    border: 2px black solid;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: fit-content;
+    justify-content: center;
+}
+.libraryRow{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.item{
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    border: 2px black solid;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 2px 2px #1a2f3b;
+}
+
+.middle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+.itemText{
+    font-size:xx-large;
+    font-weight: bolder;
+}
+
+
