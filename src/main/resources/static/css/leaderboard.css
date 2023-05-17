@@ -1,0 +1,31 @@
+.leaderboardContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    width: 100%;
+
+}
+.tableContainer{
+    width: 70%;
+    background-color: #7b7bf3;
+    border: 2px black solid;
+    box-shadow: 3px 3px #292951;
+    height: 600px;
+    overflow-y: hidden;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tr:nth-child(even){
+    background-color: #5757ad;
+}
+.column{
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+

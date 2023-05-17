@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 
+import java.util.Comparator;
 import java.util.List;
 
 @Controller
@@ -29,10 +30,17 @@ public class NrMemController {
     }
 
 
+    @GetMapping("/nummerMemLeader")
+    public String displayNrMemScores(NrMemModel nrMemModel, Model model){
+        List<NrMemModel> allScores = nrMemRepository.findAll();
+        allScores.sort(Comparator.comparing(NrMemModel::getScore).reversed());
+        model.addAttribute("allScores", allScores);
+        return "/nummerMemLeader";
+    }
+
     @GetMapping("/nummerMemory")
-    public String displayTooDoCards(NrMemModel nrMemModel, Model model){
-        model.addAttribute("allScores", nrMemRepository.findAll());
-        return "nummerMemory";
+    public String displayGame(NrMemModel nrMemModel, Model model){
+        return "/nummerMemory";
     }
 
     @PostMapping("/nummerMemory")
@@ -40,10 +48,18 @@ public class NrMemController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String name = auth.getName(); //Get the logged in username
 
-        nrMemModel.setScore(nrMemModel.getScore());
-        nrMemModel.setUsername(name);
-        nrMemRepository.save(nrMemModel);
-        nrMemModel.setScore("");
+        NrMemModel existingModel = nrMemRepository.findByUsername(name);
+        if (existingModel != null) {
+            String newScore = nrMemModel.getScore();
+            String existingScore = existingModel.getScore();
+            if (newScore.compareTo(existingScore) > 0) {
+                existingModel.setScore(newScore);
+                nrMemRepository.save(existingModel);
+            }
+        } else {
+            nrMemModel.setUsername(name);
+            nrMemRepository.save(nrMemModel);
+        }
         return"/nummerMemory";
     }
 

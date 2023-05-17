@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/static/css/main.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/static/css/leaderboard.css}">
+    <title>Nummer Memory Leaderboard</title>
+</head>
+<body>
+<div class="navbar">
+    <a href="/">
+        <div class="logoBox">
+            <p class="logoText">P.B.G</p>
+            <img th:src="@{/static/images/brain.png}" alt="brainLogo" class="logoSmall">
+        </div>
+    </a>
+    <div class="logout">
+        logout
+    </div>
+</div>
+<div class="leaderboardContainer">
+    <div class="tableContainer">
+        <table class="table">
+            <tr class="tr">
+                <th class="column">Name</th>
+                <th class="column">Score</th>
+                <th class="column">Game</th>
+            </tr>
+
+            <tr class="tr" th:each="nrMemModel:${allScores}">
+                <td class="column" th:text="${nrMemModel.username}"></td>
+                <td class="column" th:text="${nrMemModel.score}"></td>
+                <td class="column">Nummer Memory</td>
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
