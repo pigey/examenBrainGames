@@ -48,15 +48,6 @@ public class AppSecurityConfig {
                                     .defaultSuccessUrl("/", true);
                         }
                 )
-                .rememberMe(
-                        rememberMe ->{
-                            rememberMe
-                                    .rememberMeParameter("remember-me")
-                                    .tokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(21)) //3 weeks
-                                    .key("someSecureKey")
-                                    .userDetailsService(userModelService);
-                        }
-                )
                 .logout(
                         logout ->{
                             logout
